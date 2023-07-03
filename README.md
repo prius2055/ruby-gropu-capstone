@@ -130,6 +130,12 @@ You can deploy this project using:
  - Twitter: [@prius2055](https://www.twitter.com/prius2055)
  - LinkedIn: [@prius2055](https://www.linkedin.com/in/princenwuke)
 
+👤 **ESTHER UDONDIAN**
+
+- GitHub: [@Click here](https://github.com/eudondian)
+- Twitter: [@Click here](https://twitter.com/EUdondian)
+- LinkedIn: [@Click here](https://www.linkedin.com/in/esther-udondian/)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
