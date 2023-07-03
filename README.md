@@ -6,8 +6,9 @@
 
 # 📗 Table of Contents
 
+- [ruby group capstone project](#ruby-group-capstone-project)
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 Morse Code Interpreter](#-about-project-)
+- [📖 \[ruby group capstone project\] ](#-ruby-group-capstone-project-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
@@ -15,7 +16,6 @@
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
     - [Install](#install)
-    - [Usage ](#usage-)
     - [Run tests ](#run-tests-)
     - [Deployment ](#deployment-)
   - [👥 Authors ](#-authors-)
@@ -68,7 +68,7 @@ In order to run this project you need:
     <li>gem </li>
     <li>An editor such as Visual Studio Code</li>
   </ul>
-  
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Setup
@@ -78,9 +78,9 @@ Clone this repository to your desired folder:
 <ul>
 
     <li>run git clone "git@github.com:prius2055/ruby-group-capstone.gitt"</li>
-   
+
   </ul>
-  
+
   <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Install
@@ -123,9 +123,9 @@ You can deploy this project using:
 
 ## 👥 Authors <a name="authors"></a>
 
- 
+
  👤 **Prince**
- 
+
  - GitHub: [@prius2055](https://github.com/prius2055)
  - Twitter: [@prius2055](https://www.twitter.com/prius2055)
  - LinkedIn: [@prius2055](https://www.linkedin.com/in/princenwuke)
@@ -135,6 +135,12 @@ You can deploy this project using:
 - GitHub: [@Click here](https://github.com/eudondian)
 - Twitter: [@Click here](https://twitter.com/EUdondian)
 - LinkedIn: [@Click here](https://www.linkedin.com/in/esther-udondian/)
+
+👤 **Naji Ali**
+
+- GitHub: [Naji Ali](https://github.com/naji-97)
+- LinkedIn: [Naji Ali](https://linkedin.com/in/abdennaji)
+- Angelist: [Naji Ali](https://wellfound.com/u/naji-ali-1)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
