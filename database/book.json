@@ -6,10 +6,10 @@
     "archived": false,
     "publisher": "df",
     "label": {
-      "title": "red",
-      "color": "trn",
+      "title": "trn",
+      "color": "red",
       "item": [
-        "#<Book:0x0000015cfe374a68>"
+        "#<Book:0x000001dfccc84a80>"
       ]
     },
     "genre": "fiction"

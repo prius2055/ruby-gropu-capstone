@@ -96,21 +96,23 @@ class App
     @books.clear
 
     book_data.each do |book|
-      book['author']
-      book['source']
-      book['publish_date']
-      book['archived']
-      book['publisher']
-      book['cover_state']
-      book['label']['title']
-      book['label']['color']
-      book['label']['item']
-    end
-    book_item = Book.new(author, source, publish_date, archived, publisher, cover_state)
+      author = book['author']
+      source = book['source']
+      publish_date = book['publish_date']
+      archived = book['archived']
+      publisher = book['publisher']
+      cover_state = book['cover_state']
+      label_title = book['label']['title']
+      label_color = book['label']['color']
+      label_item = book['label']['item']
+
+       book_item = Book.new(author, source, publish_date, archived, publisher, cover_state)
     @books.push(book_item)
 
-    new_label_item = Label.new(title, color)
+    new_label_item = Label.new(label_title, label_color)
     new_label_item.add_item(book_item)
     @labels.push(new_label_item)
+    end
+   
   end
 end
