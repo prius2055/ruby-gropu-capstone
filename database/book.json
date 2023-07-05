@@ -9,7 +9,7 @@
       "title": "red",
       "color": "trn",
       "item": [
-        "#<Book:0x000001e0fabd4bb0>"
+        "#<Book:0x000002d2d540f830>"
       ]
     },
     "genre": "fiction"
@@ -24,7 +24,22 @@
       "title": "Red",
       "color": "Railings",
       "item": [
-        "#<Book:0x000001e0fabd4a70>"
+        "#<Book:0x000002d2d540f790>"
+      ]
+    },
+    "genre": "fiction"
+  },
+  {
+    "author": "Emmanuel Stars",
+    "source": "kindle",
+    "publish_date": 2021,
+    "archived": false,
+    "publisher": "Ben publishers",
+    "label": {
+      "title": "Brooklyn street",
+      "color": "red",
+      "item": [
+        "#<Book:0x000002d2d540f650>"
       ]
     },
     "genre": "fiction"

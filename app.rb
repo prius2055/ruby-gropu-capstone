@@ -1,118 +1,32 @@
-require './book'
-require './label'
-require 'json'
-
-require 'pry'
+require './book_methods'
 
 class App
-  attr_accessor :books, :labels
 
-  def initialize
-    @books = []
-    @labels = []
-    @items = []
+  # # MEMBER 1
+  attr_accessor :book_methods
+
+ def initialize
+    @book_methods = BookMethods.new
   end
 
   def list_all_books
-    puts 'List of books:'
-    if @books.empty?
-      puts 'No books found.'
-    else
-      @books.each { |book| puts "#{book.author}'s book, published in #{book.publish_date}" }
-    end
+     book_methods.list_all_books
   end
 
   def list_all_labels
-    puts 'List of labels:'
-    if labels.empty?
-      puts 'No labels found.'
-    else
-      labels.each { |label_item| puts "#{label_item.title},#{label_item.color}" }
-    end
+    book_methods.list_all_labels
   end
 
   def add_a_book
-    puts 'Enter the book author:'
-    author = gets.chomp
-
-    puts 'Enter book publisher:'
-    publisher = gets.chomp
-
-    puts 'Enter book publication Year:'
-    publish_date = gets.chomp.to_i
-
-    archived = Time.now.year - publish_date > 10
-
-    puts 'How did you source this book?'
-    source = gets.chomp
-
-    puts 'Choose book cover state[Good/Bad]:'
-    cover_state = gets.chomp
-
-    puts 'Choose a suitable title for the library:'
-    title = gets.chomp
-
-    puts 'Choose a suitable color for the library:'
-    color = gets.chomp
-
-    book_item = Book.new(author, source, publish_date, archived, publisher, cover_state)
-    @books.push(book_item)
-
-    new_label_item = Label.new(title, color)
-    new_label_item.add_item(book_item)
-  
-    @labels.push(new_label_item)
-    puts "New book by #{book_item.author} published by #{book_item.publisher} added successfully"
+    book_methods.add_a_book
   end
 
   def save_book
-    book_to_hash = books.map do |hash|
-        {
-            'author': hash.author,
-      'source': hash.source,
-      'publish_date': hash.publish_date,
-      'archived': hash.archived,
-      'publisher': hash.publisher,
-      'label': { title: hash.label.title, color: hash.label.color, item: hash.label.items },
-      'genre': hash.genre
-    }
-     
-    end
-
-
-
-
-
-    json = JSON.pretty_generate(book_to_hash)
-    File.open('./database/book.json', 'w') do |file|
-        file.write(json)
-    end
+    book_methods.save_book
   end
 
   def load_book
-    return [] unless File.exist?('./database/book.json')
-
-    book_data = JSON.parse(File.read('./database/book.json'))
-    @books.clear
-
-    book_data.each do |book|
-      author = book['author']
-      source = book['source']
-      publish_date = book['publish_date']
-      archived = book['archived']
-      publisher = book['publisher']
-      cover_state = book['cover_state']
-      label_title = book['label']['title']
-      label_color = book['label']['color']
-      label_item = book['label']['item']
-
-       book_item = Book.new(author, source, publish_date, archived, publisher, cover_state)
-    @books.push(book_item)
-
-    new_label_item = Label.new(label_title, label_color)
-    new_label_item.add_item(book_item)
-    @labels.push(new_label_item)
-    end
-   
+     book_methods.load_book
   end
+  ####################################
 end
