@@ -3,7 +3,7 @@ require './item'
 class Label
   attr_accessor :id, :title, :color, :items
 
-  def initialize(color, title)
+  def initialize(title, color)
     @id = Random.rand(1..1000)
     @title = title
     @color = color

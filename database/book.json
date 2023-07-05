@@ -6,10 +6,25 @@
     "archived": false,
     "publisher": "df",
     "label": {
-      "title": "trn",
-      "color": "red",
+      "title": "red",
+      "color": "trn",
       "item": [
-        "#<Book:0x000001dfccc84a80>"
+        "#<Book:0x000001e0fabd4bb0>"
+      ]
+    },
+    "genre": "fiction"
+  },
+  {
+    "author": "Giovanni Anders",
+    "source": "kindle",
+    "publish_date": 2000,
+    "archived": true,
+    "publisher": "Sky publisher",
+    "label": {
+      "title": "Red",
+      "color": "Railings",
+      "item": [
+        "#<Book:0x000001e0fabd4a70>"
       ]
     },
     "genre": "fiction"
