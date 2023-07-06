@@ -1,7 +1,6 @@
 require './game'
 require './author'
 
-
 class GameMethods
   attr_accessor :games, :authors
 
@@ -60,8 +59,6 @@ class GameMethods
 
     puts 'Enter the last palyed date of the game [YYYY-MM-DD]'
     last_played_at = gets.chomp
-
-
 
     game = Game.new(publish_date, multiplayer, last_played_at)
     @games << game
