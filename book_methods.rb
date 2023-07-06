@@ -74,7 +74,7 @@ class BookMethods
     File.write('./database/book.json', json)
   end
 
-    def load_book
+  def load_book
     return [] unless File.exist?('./database/book.json')
 
     book_data = JSON.parse(File.read('./database/book.json'))
@@ -97,8 +97,4 @@ class BookMethods
       @labels.push(new_label_item)
     end
   end
-
-
-
-
 end
