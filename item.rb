@@ -21,6 +21,4 @@ class Item
     should_be_archived = Time.now.year - @publish_date
     should_be_archived > 10
   end
-
- 
 end

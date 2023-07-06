@@ -8,13 +8,13 @@ def main
   menu_actions = {
     1 => -> { app.list_all_books },
     2 => -> { app.list_all_labels },
-    3 => -> { app.list_games},
+    3 => -> { app.list_games },
     4 => -> { app.list_authors },
-    5 => -> { },
+    5 => -> {},
     6 => -> { puts '6' },
     7 => -> { app.add_a_book },
     8 => -> { puts '8' },
-    9 => -> { app.add_game  },
+    9 => -> { app.add_game },
     10 => lambda do
       app.save_book
       puts 'Thank you for using this app. See you around soon!'
