@@ -4,7 +4,6 @@ require 'json'
 
 
 class BookMethods
-
   attr_accessor :books, :labels
 
   def initialize
@@ -42,9 +41,6 @@ class BookMethods
 
     archived = Time.now.year - publish_date > 10
 
-    puts 'How did you source this book?'
-    source = gets.chomp
-
     puts 'Choose book cover state[Good/Bad]:'
     cover_state = gets.chomp
 
@@ -54,34 +50,29 @@ class BookMethods
     puts 'Choose a suitable color for the library:'
     color = gets.chomp
 
-    book_item = Book.new(author, source, publish_date, archived, publisher, cover_state)
+    book_item = Book.new(author, publish_date, archived, publisher, cover_state)
     @books.push(book_item)
 
     new_label_item = Label.new(title, color)
     new_label_item.add_item(book_item)
-    # binding.pry
     @labels.push(new_label_item)
     puts "New book by #{book_item.author} published by #{book_item.publisher} added successfully"
   end
 
   def save_book
     book_to_hash = books.map do |hash|
-        {
-            'author': hash.author,
-      'source': hash.source,
-      'publish_date': hash.publish_date,
-      'archived': hash.archived,
-      'publisher': hash.publisher,
-      'label': { title: hash.label.title, color: hash.label.color, item: hash.label.items },
-      'genre': hash.genre
-    }
-     
+      {
+        author: hash.author,
+        cover_state: hash.cover_state,
+        publish_date: hash.publish_date,
+        archived: hash.archived,
+        publisher: hash.publisher,
+        label: { title: hash.label.title, color: hash.label.color }
+      }
     end
 
     json = JSON.pretty_generate(book_to_hash)
-    File.open('./database/book.json', 'w') do |file|
-        file.write(json)
-    end
+    File.write('./database/book.json', json)
   end
 
   def load_book
@@ -92,22 +83,19 @@ class BookMethods
 
     book_data.each do |book|
       author = book['author']
-      source = book['source']
       publish_date = book['publish_date']
       archived = book['archived']
       publisher = book['publisher']
       cover_state = book['cover_state']
       label_title = book['label']['title']
       label_color = book['label']['color']
-      label_item = book['label']['item']
 
-       book_item = Book.new(author, source, publish_date, archived, publisher, cover_state)
-    @books.push(book_item)
+      book_item = Book.new(author, publish_date, archived, publisher, cover_state)
+      @books.push(book_item)
 
-    new_label_item = Label.new(label_title, label_color)
-    new_label_item.add_item(book_item)
-    @labels.push(new_label_item)
+      new_label_item = Label.new(label_title, label_color)
+      new_label_item.add_item(book_item)
+      @labels.push(new_label_item)
     end
-   
   end
 end

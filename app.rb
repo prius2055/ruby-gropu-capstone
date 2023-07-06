@@ -1,16 +1,15 @@
 require './book_methods'
 
 class App
-
-  # # MEMBER 1
+  ##----------MEMBER 1------------##
   attr_accessor :book_methods
 
- def initialize
+  def initialize
     @book_methods = BookMethods.new
   end
 
   def list_all_books
-     book_methods.list_all_books
+    book_methods.list_all_books
   end
 
   def list_all_labels
@@ -26,7 +25,7 @@ class App
   end
 
   def load_book
-     book_methods.load_book
+    book_methods.load_book
   end
   ####################################
 end
