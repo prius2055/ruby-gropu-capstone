@@ -10,6 +10,13 @@ class Item
     @archived = archived
   end
 
+  def to_hash
+    {
+      publish_date: @publish_date,
+      genre: @genre.to_hash
+    }
+  end
+
   def move_to_archive
     @archived = true if can_be_archived?
   end

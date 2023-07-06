@@ -8,12 +8,12 @@ def main
   menu_actions = {
     1 => -> { app.list_all_books },
     2 => -> { app.list_all_labels },
-    3 => -> { app.list_games },
-    4 => -> { app.list_authors },
-    5 => -> {},
-    6 => -> { puts '6' },
+    3 => -> { app.list_all_music_albums },
+    4 => -> { app.list_all_genres },
+    5 => -> { app.list_games },
+    6 => -> { app.list_authors },
     7 => -> { app.add_a_book },
-    8 => -> { puts '8' },
+    8 => -> { app.add_music_album },
     9 => -> { app.add_game },
     10 => lambda do
       app.save_book
