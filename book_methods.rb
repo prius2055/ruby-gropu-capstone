@@ -2,7 +2,6 @@ require './book'
 require './label'
 require 'json'
 
-
 class BookMethods
   attr_accessor :books, :labels
 

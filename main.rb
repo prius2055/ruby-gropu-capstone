@@ -1,10 +1,8 @@
 require './app'
 require './options'
 
-
 def main
   app = App.new
-
 
   menu_actions = {
     1 => -> { app.list_all_books },
