@@ -3,7 +3,6 @@ require './game_methods'
 require_relative 'music_methods'
 
 class App
-  ##----------MEMBER 1------------##
   attr_accessor :book_methods, :game_methods, :music_methods
 
   def initialize
@@ -31,7 +30,6 @@ class App
   def load_book
     book_methods.load_book
   end
-  ####################################
 
   def list_games
     game_methods.list_games
@@ -44,7 +42,6 @@ class App
   def add_game
     game_methods.add_game
   end
-  # #################Member 3###############
 
   def list_all_music_albums
     music_methods.list_all_music_albums
