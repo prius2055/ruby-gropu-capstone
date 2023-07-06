@@ -1,4 +1,5 @@
 require './book_methods'
+require './game_methods'
 
 class App
   ##----------MEMBER 1------------##
