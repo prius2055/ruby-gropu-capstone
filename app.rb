@@ -3,7 +3,6 @@ require './game_methods'
 require_relative 'music_methods'
 require_relative 'storage'
 
-
 class App
   include Storage
   attr_accessor :book_methods, :game_methods, :music_methods
