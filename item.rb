@@ -14,10 +14,13 @@ class Item
     @archived = true if can_be_archived?
   end
 
+
   private
 
   def can_be_archived?
     should_be_archived = Time.now.year - @publish_date
     should_be_archived > 10
   end
+
+ 
 end
