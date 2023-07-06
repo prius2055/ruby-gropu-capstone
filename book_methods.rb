@@ -23,7 +23,7 @@ class BookMethods
   def list_all_labels
     puts 'List of labels:'
     if labels.empty?
-      puts 'No labels found.'
+      puts 'No labels found'
     else
       labels.each { |label_item| puts "#{label_item.title},#{label_item.color}" }
     end
