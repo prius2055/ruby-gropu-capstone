@@ -57,4 +57,24 @@ class BookMethods
     @labels.push(new_label_item)
     puts "New book by #{book_item.author} published by #{book_item.publisher} added successfully"
   end
+
+  def save_book
+    book_to_hash = books.map do |hash|
+      {
+        author: hash.author,
+        cover_state: hash.cover_state,
+        publish_date: hash.publish_date,
+        archived: hash.archived,
+        publisher: hash.publisher,
+        label: { title: hash.label.title, color: hash.label.color }
+      }
+    end
+
+    json = JSON.pretty_generate(book_to_hash)
+    File.write('./database/book.json', json)
+  end
+
+
+
+
 end
