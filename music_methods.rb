@@ -1,18 +1,15 @@
 require_relative 'music_album'
 require_relative 'genre'
-# require_relative 'storage'
+require_relative 'storage'
 
 class MusicMethods
-  # attr_accessor :music_album, :@genre
-  # def initialize
-  #   @music_album = []
-  #   @genre = []
   # include Storage
-  # include MusicMethods
+
+  attr_reader :music_albums, :genres
 
   def initialize
-    @music_albums = []
-    @genres = []
+    @music_albums = fetch_albums || []
+    @genres = fetch_genres || []
   end
 
   # end
