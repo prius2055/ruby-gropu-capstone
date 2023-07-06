@@ -2,7 +2,6 @@ require_relative 'music_album'
 require_relative 'genre'
 # require_relative 'storage'
 
-
 class MusicMethods
   # attr_accessor :music_album, :@genre
   # def initialize
