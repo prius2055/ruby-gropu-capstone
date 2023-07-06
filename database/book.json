@@ -1,0 +1,13 @@
+[
+  {
+    "author": "Gin ir",
+    "cover_state": "bad",
+    "publish_date": 2000,
+    "archived": true,
+    "publisher": "fogi",
+    "label": {
+      "title": "ghana",
+      "color": "red"
+    }
+  }
+]
