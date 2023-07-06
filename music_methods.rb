@@ -8,11 +8,8 @@ class MusicMethods
   attr_reader :music_albums, :genres
 
   def initialize
-    # @music_albums = fetch_albums || []
-    # @genres = fetch_genres || []
-
-    @music_albums = []
-    @genres = []
+    @music_albums = fetch_albums || []
+    @genres = fetch_genres || []
   end
 
   # end

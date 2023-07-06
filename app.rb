@@ -13,6 +13,12 @@ class App
     @music_methods = MusicMethods.new
   end
 
+  # def load_book
+  #   @book_methods.load_book
+  #   @music_methods.music_albums = fetch_albums || []
+  #   @music_methods.genres = fetch_genres || []
+  # end
+
   def list_all_books
     book_methods.list_all_books
   end
