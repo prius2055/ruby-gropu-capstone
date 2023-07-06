@@ -2,10 +2,11 @@ require './book_methods'
 
 class App
   ##----------MEMBER 1------------##
-  attr_accessor :book_methods
+  attr_accessor :book_methods, :game_methods
 
   def initialize
     @book_methods = BookMethods.new
+    @game_methods = GameMethods.new
   end
 
   def list_all_books
@@ -28,4 +29,18 @@ class App
     book_methods.load_book
   end
   ####################################
+
+  def list_games
+    game_methods.list_games
+  end
+
+  def list_authors
+    game_methods.list_authors
+  end
+
+  def add_game
+    game_methods.add_game
+  end
+######################################
 end
+
