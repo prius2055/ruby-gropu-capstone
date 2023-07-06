@@ -3,6 +3,7 @@ require './options'
 
 def main
   app = App.new
+  app.load_book
 
   menu_actions = {
     1 => -> { app.list_all_books },
@@ -15,6 +16,7 @@ def main
     8 => -> { puts '8' },
     9 => -> { puts '9' },
     10 => lambda do
+      app.save_book
       puts 'Thank you for using this app. See you around soon!'
       break
     end
