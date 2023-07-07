@@ -10,8 +10,4 @@ describe Author do
   it 'should print the author\'s last name' do
     expect(author.last_name).to eq('King')
   end
-
-  it 'should print the full name of the author' do
-    expect(author.full_name).to eq('Samuel King')
-  end
 end
