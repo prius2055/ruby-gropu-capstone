@@ -80,6 +80,7 @@ class BookMethods
     book_data = JSON.parse(File.read('./database/book.json'))
     @books.clear
 
+
     book_data.each do |book|
       author = book['author']
       publish_date = book['publish_date']

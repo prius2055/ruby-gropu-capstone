@@ -4,6 +4,7 @@ require './options'
 def main
   app = App.new
   app.load_book
+  app.load_game
 
   menu_actions = {
     1 => -> { app.list_all_books },
@@ -17,10 +18,9 @@ def main
     9 => -> { app.add_game },
     10 => lambda do
       app.save_book
-      # save_albums(app.music_methods.music_albums)
-      # save_data('./database/genre.json', array_to_hash(app.music_methods.genres))
+      app.save_game
       puts 'Thank you for using this app. See you around soon!'
-      exit # Exit the app
+      exit
     end
   }
 

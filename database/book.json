@@ -31,5 +31,16 @@
       "title": "Heirs way",
       "color": "red"
     }
+  },
+  {
+    "author": "10",
+    "cover_state": "10",
+    "publish_date": 10,
+    "archived": true,
+    "publisher": "10",
+    "label": {
+      "title": "10",
+      "color": ""
+    }
   }
 ]
