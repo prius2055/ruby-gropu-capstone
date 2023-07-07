@@ -81,7 +81,7 @@ class GameMethods
         last_played_at: hash.last_played_at
       }
     end
-
+    
     author_to_hash = authors.map do |hash|
       {
 
