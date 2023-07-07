@@ -45,7 +45,7 @@ class GameMethods
     last_name = gets.chomp
 
     puts 'Enter the publish date of the game (YYYY-MM-DD)'
-    publish_date = gets.chomp.to_i
+    publish_date = gets.chomp
 
     Time.now.year
 
