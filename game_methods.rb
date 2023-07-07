@@ -5,8 +5,8 @@ class GameMethods
   attr_accessor :games, :authors
 
   def initialize
-    @game = []
-    @author = []
+    @games = []
+    @authors = []
   end
 
   def list_authors
@@ -45,7 +45,9 @@ class GameMethods
     last_name = gets.chomp
 
     puts 'Enter the publish date of the game (YYYY-MM-DD)'
-    publish_date = gets.chomp
+    publish_date = gets.chomp.to_i
+
+    Time.now.year
 
     puts 'Is it a multiplayer game? [Y/N]'
     multiplayer = gets.chomp.upcase
@@ -61,7 +63,8 @@ class GameMethods
     last_played_at = gets.chomp
 
     game = Game.new(publish_date, multiplayer, last_played_at)
-    @games << game
+    # @games.push(game) 
+    puts game.inspect
 
     author = Author.new(first_name, last_name)
     @authors << author
@@ -74,5 +77,38 @@ class GameMethods
   def add_author(author)
     @author = author
     author.items.push(self) unless author.items include?(self)
+  end
+
+  def save_game
+    game_to_hash = games.map do |hash|
+      {
+        publish_date: hash.publish_date,
+        multiplayer: hash.multiplayer,
+        last_played_at: hash.last_played_at
+      }
+    end
+
+    json = JSON.pretty_generate(game_to_hash)
+    File.write('./database/games.json', json)
+  end
+
+  def load_game
+    return [] unless File.exist?('./database/games.json')
+
+    game_data = JSON.parse(File.read('./database/games.json'))
+    @games.clear
+
+    game_data.each do |game|
+      publish_date = game['publish_date']
+      multiplayer = game['multiplayer']
+      last_played_at = ['last_played_at']
+
+      Game.new(publish_date, multiplayer, last_played_at)
+      @games << game
+    end
+
+    new_author_item = Author.new(first_name, last_name)
+    new_author_item.add_item(game_item)
+    @authors << author
   end
 end
