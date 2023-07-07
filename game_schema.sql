@@ -5,3 +5,8 @@ CREATE TABLE items (
   archived BOOLEAN
 );
 
+CREATE TABLE game(
+    id SERIAL PRIMARY KEY,
+    multiplayer BOOLEAN,
+    last_played_at DATE
+);
