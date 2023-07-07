@@ -59,7 +59,7 @@ class GameMethods
       multiplayer = false
     end
 
-    puts 'Enter the last palyed date of the game [YYYY-MM-DD]'
+    puts 'Enter the last played date of the game [YYYY-MM-DD]'
     last_played_at = gets.chomp
 
     game = Game.new(publish_date, multiplayer, last_played_at)
@@ -72,11 +72,6 @@ class GameMethods
 
     puts "Game  '#{game.publish_date}', '#{game.multiplayer}, '#{game.last_played_at} added successfully"
   end
-
-  # def add_author(author)
-  #   @author = author
-  #   author.items.push(self) unless author.items include?(self)
-  # end
 
   def save_game
     game_to_hash = games.map do |hash|
