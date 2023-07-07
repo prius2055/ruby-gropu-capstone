@@ -6,7 +6,7 @@ class GameMethods
 
   def initialize
     @games = []
-    @authors = []
+    @author = []
   end
 
   def list_authors
@@ -63,8 +63,7 @@ class GameMethods
     last_played_at = gets.chomp
 
     game = Game.new(publish_date, multiplayer, last_played_at)
-    # @games.push(game) 
-    puts game.inspect
+    @games << game
 
     author = Author.new(first_name, last_name)
     @authors << author
