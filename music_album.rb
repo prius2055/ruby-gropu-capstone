@@ -14,8 +14,6 @@ class MusicAlbum < Item
       id: @id,
       on_spotify: on_spotify,
       genre: @genre.to_hash
-      # label: @label.to_hash,
-      # author: @author.to_hash
     }
     super.merge(hash)
   end
