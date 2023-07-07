@@ -7,7 +7,6 @@ class Game < Item
     super(nil, nil, publish_date, nil, nil)
     @multiplayer = multiplayer
     @last_played_at = last_played_at
-    
   end
 
   def can_be_archived?
