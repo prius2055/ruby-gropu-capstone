@@ -6,7 +6,7 @@ class GameMethods
 
   def initialize
     @games = []
-    @author = []
+    @authors = []
   end
 
   def list_authors
@@ -59,7 +59,7 @@ class GameMethods
       multiplayer = false
     end
 
-    puts 'Enter the last palyed date of the game [YYYY-MM-DD]'
+    puts 'Enter the last played date of the game [YYYY-MM-DD]'
     last_played_at = gets.chomp
 
     game = Game.new(publish_date, multiplayer, last_played_at)
@@ -73,11 +73,6 @@ class GameMethods
     puts "Game  '#{game.publish_date}', '#{game.multiplayer}, '#{game.last_played_at} added successfully"
   end
 
-  def add_author(author)
-    @author = author
-    author.items.push(self) unless author.items include?(self)
-  end
-
   def save_game
     game_to_hash = games.map do |hash|
       {
@@ -87,8 +82,19 @@ class GameMethods
       }
     end
 
-    json = JSON.pretty_generate(game_to_hash)
-    File.write('./database/games.json', json)
+    author_to_hash = authors.map do |hash|
+      {
+
+        first_name: hash.first_name,
+        last_name: hash.last_name
+      }
+    end
+
+    game_json = JSON.pretty_generate(game_to_hash)
+    author_json = JSON.pretty_generate(author_to_hash)
+
+    File.write('./database/games.json', game_json)
+    File.write('./database/authors.json', author_json)
   end
 
   def load_game
@@ -97,17 +103,29 @@ class GameMethods
     game_data = JSON.parse(File.read('./database/games.json'))
     @games.clear
 
+    new_game = ''
     game_data.each do |game|
       publish_date = game['publish_date']
       multiplayer = game['multiplayer']
-      last_played_at = ['last_played_at']
+      last_played_at = game['last_played_at']
 
-      Game.new(publish_date, multiplayer, last_played_at)
+      game = Game.new(publish_date, multiplayer, last_played_at)
+      new_game = game
       @games << game
     end
 
-    new_author_item = Author.new(first_name, last_name)
-    new_author_item.add_item(game_item)
-    @authors << author
+    return [] unless File.exist?('./database/authors.json')
+
+    author_data = JSON.parse(File.read('./database/authors.json'))
+    @authors.clear
+
+    author_data.each do |author|
+      first_name = author['first_name']
+      last_name = author['last_name']
+
+      author = Author.new(first_name, last_name)
+      author.add_items(new_game)
+      @authors << author
+    end
   end
 end

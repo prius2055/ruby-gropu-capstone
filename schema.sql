@@ -26,7 +26,7 @@ CREATE TABLE labels (
   color VARCHAR(255),
 );
 
--- Create the music_albums table
+
 CREATE TABLE music_albums (
     id SERIAL PRIMARY KEY,
     publish_date DATE NOT NULL,
@@ -38,8 +38,20 @@ CREATE TABLE music_albums (
 )
 ;
 
--- Create the genres table
+
 CREATE TABLE genres (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE game(
+    id SERIAL PRIMARY KEY,
+    multiplayer BOOLEAN,
+    last_played_at DATE
+);
+
+CREATE TABLE author(
+    id SERIAL PRIMARY KEY,
+    first_name VARCHAR(255),
+    last_name VARCHAR(255)
 );
