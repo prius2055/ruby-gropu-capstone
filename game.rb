@@ -13,7 +13,6 @@ class Game < Item
     last_played_date = DateTime.parse(last_played_at).to_date
     archived = (Date.today.year - last_played_date.year) > 2
 
-
     if move_to_archive || archived
       true
     else
