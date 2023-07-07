@@ -3,16 +3,13 @@ require_relative 'genre'
 require_relative 'storage'
 
 class MusicMethods
-  # include Storage
+  include Storage
 
   attr_reader :music_albums, :genres
 
   def initialize
-    # @music_albums = fetch_albums || []
-    # @genres = fetch_genres || []
-
-    @music_albums = []
-    @genres = []
+    @music_albums = fetch_albums || []
+    @genres = fetch_genres || []
   end
 
   # end
@@ -47,7 +44,9 @@ class MusicMethods
     genre_name = gets.chomp
     genre = find_or_create_genre(genre_name)
     genre.add_item(album)
-
+    save_albums(@music_albums) # Call save_albums to save the albums to the JSON file
+    save_data("#{DATABASE_FOLDER}/genre.json", array_to_hash(@genres)) # Save genres to the JSON file
+    puts 'Music album added successfully.'
     puts 'Music album added successfully.'
   end
 

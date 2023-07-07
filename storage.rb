@@ -4,14 +4,16 @@ require_relative 'music_album'
 require_relative 'genre'
 
 module Storage
+  DATABASE_FOLDER = './database'.freeze
+
   # Method to save albums to a JSON file
   def save_albums(albums)
-    save_data('./data/album.json', array_to_hash(albums))
+    save_data("#{DATABASE_FOLDER}/album.json", array_to_hash(albums))
   end
 
   # Method to fetch albums from a JSON file
   def fetch_albums
-    albums = fetch_data('./data/album.json')
+    albums = fetch_data("#{DATABASE_FOLDER}/album.json")
     albums_arr = []
     albums&.each do |album|
       album_sample = MusicAlbum.new(album['on_spotify'], album['publish_date'])
@@ -23,13 +25,13 @@ module Storage
 
   # Method to fetch genres from a JSON file
   def fetch_genres
-    genres = fetch_data('./data/genre.json')
+    genres = fetch_data("#{DATABASE_FOLDER}/genre.json")
     genres&.map do |genre|
       Genre.new(genre['name'])
     end
   end
 
-  # private
+  private
 
   # Method to save data to a JSON file
   def save_data(file_path, data)
