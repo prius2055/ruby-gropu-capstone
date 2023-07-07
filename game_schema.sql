@@ -10,3 +10,9 @@ CREATE TABLE game(
     multiplayer BOOLEAN,
     last_played_at DATE
 );
+
+CREATE TABLE author(
+    id SERIAL PRIMARY KEY,
+    first_name VARCHAR(255),
+    last_name VARCHAR(255)
+);
