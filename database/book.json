@@ -1,0 +1,46 @@
+[
+  {
+    "author": "Gin ir",
+    "cover_state": "bad",
+    "publish_date": 2000,
+    "archived": true,
+    "publisher": "fogi",
+    "label": {
+      "title": "ghana",
+      "color": "red"
+    }
+  },
+  {
+    "author": "Vivian Heir",
+    "cover_state": "bad",
+    "publish_date": 2021,
+    "archived": false,
+    "publisher": "Heritage publishers",
+    "label": {
+      "title": "Broadway",
+      "color": "red"
+    }
+  },
+  {
+    "author": "Going higher",
+    "cover_state": "bad",
+    "publish_date": 2011,
+    "archived": true,
+    "publisher": "Benny Carty",
+    "label": {
+      "title": "Heirs way",
+      "color": "red"
+    }
+  },
+  {
+    "author": "10",
+    "cover_state": "10",
+    "publish_date": 10,
+    "archived": true,
+    "publisher": "10",
+    "label": {
+      "title": "10",
+      "color": ""
+    }
+  }
+]
