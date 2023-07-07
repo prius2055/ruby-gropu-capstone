@@ -47,6 +47,12 @@
 ### Key Features <a name="key-features"></a>
 
 - **[Kanbam board set up]**
+- **[Set up UI for users]**
+- **[Allow users to add items]**
+- **[Allow users to view list of added items]**
+- **[Allow users to save items in json format]**
+- **[Performed test for the functions]**
+- **[Set up schema files]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
